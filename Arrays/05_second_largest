@@ -1,0 +1,32 @@
+package Arrayseasy;
+import java.util.*;
+public class secondlargest {
+	
+	public static  void secondLargest(int arr []) {
+		if(arr.length<2) {
+			System.out.print("-1");
+		}
+		int largest = arr[0];
+		int second_largest = -1;
+		for(int i=1;i<arr.length;i++) {
+			if(arr[i]>largest) {
+				second_largest = largest;
+				largest = arr[i];
+			}
+			else if(arr[i]>second_largest&&arr[i]!=largest) {
+				second_largest = arr[i];
+			}
+		}
+		System.out.print(second_largest);
+//		return second_largest;	
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int arr [] = new int[n];
+		for(int i=0;i<arr.length;i++) {
+			arr[i]=sc.nextInt();
+		}
+		secondLargest(arr);	
+	}
+}
