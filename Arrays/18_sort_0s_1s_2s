@@ -1,0 +1,56 @@
+//Brute force for solving this problem in using just any sort function
+
+// better approach will be 
+//Keeping count of values
+
+//Intuition: Since in this case there are only 3 distinct values in the array so it's easy to maintain the count of all, Like the count of 0, 1, and 2. This can be followed by overwriting the array based on the frequency(count) of the values.
+
+//Approach: 
+
+//Take 3 variables to maintain the count of 0, 1 and 2.
+//Travel the array once and increment the corresponding counting variables
+//( let's consider count_0 = a, count_1 = b, count_2 = c )
+
+//In 2nd traversal of array, we will now over write the first ‘a’ indices / positions in array with ’0’, the next ‘b’ with ‘1’ and the remaining ‘c’ with ‘2’.
+
+
+//OPTIMAL approach
+
+//By using Dutch flag alogorithm
+
+package Arrayseasy;
+import java.util.*;
+public class sort_arrays_0s_1s_2s {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int [] arr = new int[n];
+		for(int i=0;i<n;i++) {
+			arr[i]=sc.nextInt();
+		}
+		int low = 0;
+		int mid = 0;
+		int high = n-1;
+		while(mid<=high) {
+			if(arr[mid]==0) {
+				int temp = arr[mid];
+				arr[mid] = arr[low];
+				arr[low] = temp;
+				low++;
+				mid++;
+			}
+			else if(arr[mid]==1) {
+				mid++;
+			}
+			else {
+				int temp = arr[mid];
+				arr[mid] = arr[high];
+				arr[high] = temp;
+				high--;
+			}
+		}
+		for(int i=0;i<n;i++) {
+			System.out.print(arr[i]+" ");
+		}
+	}
+}
