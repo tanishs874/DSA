@@ -1,0 +1,28 @@
+package Arrayseasy;
+import java.util.*;
+public class rearrange_array_elements_by_sign {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int [] arr = new int[n];
+		for(int i=0;i<n;i++) {
+			arr[i] = sc.nextInt();
+		}	
+		int pos_index = 0;
+		int neg_index = 1;
+		int [] ans = new int[n];
+		for(int i=0;i<n;i++) {
+			if(arr[i]>0) {
+				ans[pos_index] = arr[i];
+				pos_index += 2;
+			}
+			else {
+				ans[neg_index] = arr[i];
+				neg_index += 2;
+			}
+		}
+		for(int i=0;i<n;i++) {
+			System.out.print(ans[i]+" ");
+		}
+	}
+}
