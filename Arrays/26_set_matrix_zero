@@ -1,4 +1,5 @@
-class Solution {
+//leetcode solution
+ Solution {
     public void setZeroes(int[][] matrix) {
         int n = matrix.length;
         int m = matrix[0].length;
@@ -20,4 +21,53 @@ class Solution {
             }
         }
     }
+}
+
+//eclipse solution 
+
+package Arrayseasy;
+import java.util.*;
+public class set_matrix_zero {
+	
+	public static int [] [] set(int arr [] []){
+		int n = arr.length;
+		int m = arr[0].length;
+		int row [] = new int[n];
+		int col [] = new int[m];
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<m;j++) {
+				if(arr[i][j]==0) {
+					row[i]=1;
+					col[j]=1;
+				}
+			}
+		}
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<m;j++) {
+				if(row[i]==1||col[j]==1) {
+					arr[i][j]=0;
+				}
+			}
+		}
+		return arr;
+	}
+	
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+		int [] [] arr = new int[n][m];
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<m;j++) {
+				arr[i][j]=sc.nextInt();
+			}
+		}
+		int result [] [] = set(arr);
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<m;j++) {
+				System.out.print(result[i][j]+" ");
+			}
+		}
+	}
 }
