@@ -1,0 +1,37 @@
+package Arrayseasy;
+import java.util.*;
+public class longest_consecutive_subsequence {
+	
+	public static int longest(int [] arr , int n) {
+		Arrays.sort(arr);
+		if(n==0) {
+			return 0;
+		}
+		int prev_no = Integer.MIN_VALUE;
+		int count = 0;
+		int longest = 1;
+		for(int i=0;i<n;i++) {
+			if(arr[i]-1==prev_no) {
+				count += 1;
+				prev_no = arr[i];
+			}
+			else if(arr[i]!=prev_no) {
+				count = 1;
+				prev_no = arr[i];
+			}
+			longest = Math.max(longest,count);
+		}
+		return longest;
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int [] arr = new int[n];
+		for(int i=0;i<n;i++) {
+			arr[i] = sc.nextInt();
+		}
+		int result = longest(arr,n);
+		System.out.print(result);
+	}
+}
