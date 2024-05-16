@@ -1,0 +1,10 @@
+package string_git_hub;
+import java.util.*;
+public class remove_special_characters {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		str = str.replaceAll("[^A-Za-z0-9]","");
+		System.out.println(str);
+	}
+}
