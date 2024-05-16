@@ -1,0 +1,15 @@
+package string_git_hub;
+import java.util.*;
+public class remove_duplicates {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		StringBuffer sb = new StringBuffer();
+		str.chars().distinct().forEach(c -> sb.append((char)c));
+		System.out.print(sb);
+	}
+}
+
+//str.chars().distinct().forEach(c -> sb.append((char)c));
+//str.chars().distinct().forEach(c -> sb.append((char)c));:
+//  This line converts the string str into an IntStream of its characters, removes duplicates using the distinct() method, and then iterates over each distinct character. For each character c, it appends it to the StringBuffer sb
