@@ -1,0 +1,22 @@
+package string_git_hub;
+import java.util.*;
+public class digits_first_then_characters {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		String ans = "";
+		String dg = "";
+		String ch = "";
+		for(int i=0;i<s.length();i++) {
+			char c = s.charAt(i);
+			if(Character.isDigit(c)) {
+				dg = dg + c;
+			}
+			else {
+				ch = ch + c;
+			}
+		}
+		ans = dg + ch;
+		System.out.print(ans);
+	}
+}
