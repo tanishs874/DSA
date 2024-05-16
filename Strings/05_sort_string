@@ -1,0 +1,11 @@
+package string_git_hub;
+import java.util.*;
+public class sort_string {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		char [] c = str.toCharArray();
+		Arrays.sort(c);
+		System.out.print(c);
+	}
+}
