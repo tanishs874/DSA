@@ -1,0 +1,42 @@
+// using split method
+package string_git_hub;
+import java.util.*;
+public class word_starting_with_R {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		String [] s1 = s.split(" ");
+		for(String a : s1) {
+			char f = a.charAt(0);
+			char l = a.charAt(a.length()-1);
+			if(Character.toUpperCase(f)==Character.toUpperCase(l)) {
+				System.out.print(a+" ");
+			}
+		}
+	}
+}
+
+package string_git_hub;
+import java.util.*;
+public class word_starting_with_R {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		String w = "";
+		s+=" ";
+		for(int i=0;i<s.length();i++) {
+			char c = s.charAt(i);
+			if(c!=' ') {
+				w+=c;
+			}
+			else {
+				char f = w.charAt(0);
+				char l = w.charAt(w.length()-1);
+				if(Character.toUpperCase(f)==Character.toUpperCase(l)){
+					System.out.print(w+" ");
+				}
+				w="";
+			}
+		}
+	}
+}
