@@ -1,0 +1,16 @@
+package string_git_hub;
+import java.util.*;
+public class capitalize_each_word {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		String [] s1 = s.split(" ");
+		String ns = "";
+		for(String a : s1) {
+			char f = a.charAt(0);
+			f = Character.toUpperCase(f);
+			ns = ns + f + a.substring(1)+" ";
+		}
+		System.out.print(ns);
+	}
+}
