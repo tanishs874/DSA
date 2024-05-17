@@ -1,0 +1,35 @@
+package string_git_hub;
+import java.util.*;
+public class print_first_character {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		String w = "";
+		s+=" ";
+		for(int i=0;i<s.length();i++) {
+			char c = s.charAt(i);
+			if(c!=' ') {
+				w+=c;
+			}
+			else {
+				System.out.println(w.charAt(0));
+				w="";
+			}
+		}
+	}
+}
+
+//using split method
+
+package string_git_hub;
+import java.util.*;
+public class print_first_character {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		String [] s1 = s.split(" ");
+		for(String a : s1) {
+			System.out.println(a.charAt(0));
+		}
+	}
+}
