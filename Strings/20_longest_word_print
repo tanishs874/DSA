@@ -1,0 +1,41 @@
+package string_git_hub;
+import java.util.*;
+public class longest_word {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		String w = "";String lw = "";
+		s+=" ";
+		for(int i=0;i<s.length();i++) {
+			char c = s.charAt(i);
+			if(c!=' ') {
+				w+=c;
+			}
+			else {
+				if(w.length()> lw.length()) {
+					lw = w;
+				}
+				w="";
+			}
+		}
+		System.out.print(lw);
+	}
+}
+
+// using split method
+package string_git_hub;
+import java.util.*;
+public class longest_word {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		String lw = "";
+		String [] s1 = s.split(" ");
+		for(String a:s1) {
+			if(a.length()>lw.length()) {
+				lw = a;
+			}
+		}
+		System.out.print(lw);
+	}
+}
