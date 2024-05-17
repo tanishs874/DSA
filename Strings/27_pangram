@@ -1,0 +1,22 @@
+package string_git_hub;
+import java.util.*;
+public class pangram {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		HashSet<Character> hs = new HashSet<>();
+		s = s.toLowerCase();
+		for(int i=0;i<s.length();i++) {
+			char c = s.charAt(i);
+			if(c>=97 && c<=122) {
+				hs.add(c);
+			}
+		}
+		if(hs.size()==26) {
+			System.out.print("pangram");
+		}
+		else {
+			System.out.print("Not a pangram");
+		}
+	}
+}
