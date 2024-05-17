@@ -1,0 +1,16 @@
+// using split method
+package string_git_hub;
+import java.util.*;
+public class delete_word {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();String ns = "";
+		String [] s1 = s.split(" ");
+		for(String a : s1) {
+			if(!a.equals("red")) {
+				ns = ns + a + " ";
+			}
+		}
+		System.out.print(ns);
+	}
+}

@@ -1,0 +1,45 @@
+package string_git_hub;
+import java.util.*;
+public class change_red_with_blue {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		String w = "";String ns = "";
+		s+=" ";
+		for(int i=0;i<s.length();i++) {
+			char c = s.charAt(i);
+			if(c!=' ') {
+				w+=c;
+			}
+			else {
+				if(w.equals("red")) {
+					ns = ns + "blue" +" ";
+				}
+				else {
+					ns = ns + w + " ";
+				}
+				w="";
+			}
+		}
+		System.out.print(ns);
+	}
+}
+
+// using split method
+package string_git_hub;
+import java.util.*;
+public class change_red_with_blue {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();String ns = "";
+		String [] s1 = s.split(" ");
+		for(String a : s1) {
+			if(a.equals("red")) {
+				ns = ns + "blue" + " ";
+			}else {
+				ns = ns + a + " ";
+			}
+		}
+		System.out.print(ns);
+	}
+}
