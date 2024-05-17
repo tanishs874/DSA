@@ -1,0 +1,22 @@
+// using split method
+package string_git_hub;
+import java.util.*;
+public class change_case_of_each_alternate_word {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		String [] s1 = s.split(" ");
+		String ns = "";
+		int count = 0;
+		for(String a : s1) {
+			if(count++%2==0) {
+				ns = ns + a.toUpperCase()+" ";
+			}
+			else {
+				ns = ns + a.toLowerCase() + " ";
+			}
+		}
+		System.out.print(ns);
+	}
+
+}
