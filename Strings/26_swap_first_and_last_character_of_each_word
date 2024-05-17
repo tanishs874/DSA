@@ -1,0 +1,17 @@
+package string_git_hub;
+import java.util.*;
+public class swap_first_last_word {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		String ns = "";
+		String [] s1 = s.split(" ");
+		for(String a : s1) {
+			char f = a.charAt(0);
+			char l = a.charAt(a.length()-1);
+			String m = a.substring(1,a.length()-1);
+			ns = ns + l + m + f + " ";
+		}
+		System.out.print(ns);
+	}
+}
