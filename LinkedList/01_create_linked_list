@@ -28,22 +28,7 @@ public class linkedlistgithub {
 		}
 		return head;
 	}
-	public static node insert(node head , int data , int pos) {
-		node new_node = new node(data);
-		if(pos==0) {
-			new_node.next=head;
-			return new_node;
-		}
-		int i = 0;
-		node temp = head;
-		while(i<pos-1) {
-			temp=temp.next;
-			i++;
-		}
-		new_node.next=temp.next;
-		temp.next=new_node;
-		return head;
-	}
+	
 	public static void print(node head) {
 		node temp = head;
 		while(temp!=null) {
