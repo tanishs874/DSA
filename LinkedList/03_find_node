@@ -1,0 +1,63 @@
+ package githublinkedlist;
+ import java.util.*;
+ class node {
+	 int data;
+	 node next;
+	 node(){
+		 
+	 }
+	 node(int data){
+		 this.data=data;
+		 this.next=null;
+	 }
+ }
+ 
+ public class find_node{
+	 
+	 public static node takeinput() {
+		Scanner sc = new Scanner(System.in);
+		int data = sc.nextInt();
+		node head = null;
+		node tail = null;
+		while(data!=-1) {
+			node new_node = new node(data);
+			if(head==null) {
+				head = new_node;
+				tail = new_node;
+			}
+			else {
+				tail.next = new_node;
+				tail = tail.next;
+			}
+			data = sc.nextInt();
+		}
+		return head;
+	 }
+	 
+	 public static void print(node head) {
+		 node temp = head;
+		 while(temp!=null) {
+			 System.out.print(temp.data+" ");
+			 temp = temp.next;
+		 }
+	 }
+	 
+	 public static int find(node head, int data) {
+		 node temp = head;
+		 int i = 0;
+		 while(temp!=null) {
+			 if(temp.data == data) {
+				 return i;
+			 }
+			 temp = temp.next;
+			 i++;
+		 }
+		 return -1;
+	 }
+	 
+	 public static void main(String [] args) {
+		 node head = takeinput();
+		 int ans = find(head,30);
+		 System.out.print(ans);	 
+	 }
+ }
