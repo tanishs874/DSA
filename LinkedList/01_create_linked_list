@@ -1,0 +1,58 @@
+package githublinkedlist;
+import java.util.*;
+class node{
+	int data;
+	node next;
+	node(int data){
+		this.data=data;
+		this.next=null;
+	}
+}
+public class linkedlistgithub {
+	public static node take_input() {
+		node head = null;
+		node tail = null;
+		Scanner sc = new Scanner(System.in);
+		int data = sc.nextInt();
+		while(data!=-1) {
+			node new_node = new node(data);
+			if(head==null) {
+				head = new_node;
+				tail = new_node;
+			}
+			else {
+				tail.next=new_node;
+				tail=tail.next;
+			}
+			data=sc.nextInt();
+		}
+		return head;
+	}
+	public static node insert(node head , int data , int pos) {
+		node new_node = new node(data);
+		if(pos==0) {
+			new_node.next=head;
+			return new_node;
+		}
+		int i = 0;
+		node temp = head;
+		while(i<pos-1) {
+			temp=temp.next;
+			i++;
+		}
+		new_node.next=temp.next;
+		temp.next=new_node;
+		return head;
+	}
+	public static void print(node head) {
+		node temp = head;
+		while(temp!=null) {
+			System.out.print(temp.data+" ");
+			temp=temp.next;
+		}
+	}
+	public static void main(String[] args) {
+		node head = take_input();
+		print(head);
+	}
+}
