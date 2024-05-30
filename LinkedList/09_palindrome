@@ -1,0 +1,72 @@
+package githublinkedlist;
+import java.util.*;
+class node{
+	int data;
+	node next;
+	node(int data){
+		this.data=data;
+		this.next=null;
+	}
+}
+public class linkedlistgithub {
+	public static node take_input() {
+		node head = null;
+		node tail = null;
+		Scanner sc = new Scanner(System.in);
+		int data = sc.nextInt();
+		while(data!=-1) {
+			node new_node = new node(data);
+			if(head==null) {
+				head = new_node;
+				tail = new_node;
+			}
+			else {
+				tail.next=new_node;
+				tail=tail.next;
+			}
+			data=sc.nextInt();
+		}
+		return head;
+	}
+	
+	public static void print(node head) {
+		node temp = head;
+		while(temp!=null) {
+			System.out.print(temp.data+" ");
+			temp=temp.next;
+		}
+	}
+
+    	public static boolean palindrome(node head) {
+		node fast = head;
+		node slow = head;
+		while(fast!=null&&fast.next!=null) {
+			fast = fast.next.next;
+			slow = slow.next.next;
+		}
+		node curr = slow;
+		node prev = null;
+		while(curr!=null) {
+			node temp = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = temp;
+		}
+		fast = head;
+		while(prev!=null) {
+			if(prev.data!=fast.data) {
+				return false;
+			}
+			fast = fast.next;
+			prev = prev.next;
+		}
+		return true;
+	}
+	
+
+	public static void main(String[] args) {
+		node head = take_input();
+		boolean result = palindrome(head);
+		System.out.print(result);
+	}
+}
