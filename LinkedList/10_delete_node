@@ -49,7 +49,7 @@ public class linkedlistgithub {
 	}
 
 	public static void main(String[] args) {
-		node head = take_input();
+		node  head = take_input();
 		node tanish1234 = delete_node(head,3);
 		print(tanish1234);
 	}
