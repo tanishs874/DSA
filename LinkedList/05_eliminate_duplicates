@@ -47,7 +47,7 @@ public class linkedlistgithub {
 				curr = curr.next;
 			}
 		}
-		return head;
+		return  head;
 	}
 
 	public static void main(String[] args) {
