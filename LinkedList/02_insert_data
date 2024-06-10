@@ -44,7 +44,7 @@ public class linkedlistgithub {
 		temp.next=new_node;
 		return head;
 	}
-	public static void print(node head) {
+	public   static void print(node head) {
 		node temp = head;
 		while(temp!=null) {
 			System.out.print(temp.data+" ");
