@@ -1,0 +1,70 @@
+package linklist;
+import java.util.*;
+class node{
+	int data;
+	node next;
+	node(int data){
+		this.data=data;
+		this.next=null;
+	}
+}
+public class delete_middle {
+	
+	public static node takeinput() {
+		node head = null;
+		node tail = null;
+		Scanner sc = new Scanner(System.in);
+		int data = sc.nextInt();
+		while(data!=-1) {
+			node new_node = new node(data);
+			if(head == null) {
+				head = new_node;
+				tail = new_node;
+			}
+			else {
+				tail.next = new_node;
+				tail = tail.next;
+			}
+			data = sc.nextInt();
+		}
+		return head;
+	}
+
+	public static void print(node head) {
+		node temp = head;
+		while(temp!=null) {
+			System.out.print(temp.data+" ");
+			temp = temp.next;
+		}
+	}
+	
+	public static node delete_middle(node head) {
+		int count = 1;
+		node fast = head;
+		node slow = head;
+		while(fast!=null&&fast.next!=null) {
+			fast = fast.next.next;
+			slow = slow.next;
+			count++;
+		}
+		int i = 1;
+		node temp = head;
+		while(i<count-1) {
+			temp = temp.next;
+			i++;
+		}
+		temp.next = temp.next.next;
+		return head;
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		node head = takeinput();
+		print(head);System.out.println();
+		node tanish = delete_middle(head);
+		print(tanish);
+		
+	}
+
+}
